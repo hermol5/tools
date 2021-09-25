@@ -1,15 +1,18 @@
 import { Request, Response, NextFunction } from "express";
+import DefaultResponse from "../common/default.response";
 
 export const notFoundHandler = (
     request: Request,
     response: Response,
     next: NextFunction
 ) => {
-
-    const message = "404 - Not found";
+    
+    const resp: DefaultResponse = {
+        message: "404 - Not found",
+        description: "Please provide valid address from Terra blockchain"
+    }
 
     response
-        .type('text/json')
         .status(404)
-        .send(message);
+        .json(resp);
 };

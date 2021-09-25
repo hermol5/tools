@@ -11,7 +11,6 @@ export const errorHandler = (
     const status = error.statusCode || error.status || 500;
 
     response
-      .type('text/json')
       .status(status)
-      .send(error);
+      .json(error);
 };

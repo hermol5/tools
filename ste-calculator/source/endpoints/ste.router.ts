@@ -8,10 +8,11 @@ steRouter.get(/^\/((?:terra+[0-9a-z].*))(?:\/(?=$))?(?=\/|$)/i, async (req: Requ
     try {
         const ste = await SteService.getSteValue(req.params[0]);
         res
-            .type('application/json')
             .status(200)
-            .send(ste);
+            .json(ste);
     } catch (e) {
-        res.status(500).send((e as HttpException).message);
+        res
+            .status(500)
+            .json((e as HttpException).message);
     }
 });
