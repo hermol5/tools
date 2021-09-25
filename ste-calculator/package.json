@@ -8,7 +8,8 @@
   "main": "source/app.ts",
   "scripts": {
     "dev": "ts-node-dev --respawn --pretty --transpile-only source/app.ts",
-    "build": "rm -rf build/ && prettier --write source/ && tsc"
+    "build": "rm -rf build/ && prettier --write source/ && tsc",
+    "start": "node source/app.ts"
   },
   "dependencies": {
     "@types/axios": "^0.14.0",
