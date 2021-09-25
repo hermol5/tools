@@ -5,11 +5,11 @@
   "repository": "https://github.com/starterra/tools.git",
   "author": "Tomasz Kowalczyk <tomek@kownet.info>",
   "license": "MIT",
-  "main": "source/app.ts",
+  "main": "build/app.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --pretty --transpile-only source/app.ts",
-    "build": "rm -rf build/ && prettier --write source/ && tsc",
-    "start": "node source/app.ts"
+    "build": "tsc --build",
+    "start": "node build/app.js"
   },
   "dependencies": {
     "@types/axios": "^0.14.0",
@@ -22,7 +22,6 @@
     "typescript": "^4.4.3"
   },
   "devDependencies": {
-    "prettier": "2.4.1",
     "ts-node-dev": "^1.1.8"
   }
 }
