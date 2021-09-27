@@ -24,7 +24,7 @@ const pools: StakingPools = {
     }
 };
 
-const STE_RATIO: number = 1.2;
+const STE_RATIO: number = 1.25;
 
 export const getSteValue = async (address: string): Promise<StarTerraEnergy> => {
     const currentBlock = await getCurrentBlock();
